@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+div{
+    padding: 20px;
+    color: black;
+}
+
+.start{
+    background-color: red;
+}
+
+.final_form{
+    background-color: greenyellow;
+}
