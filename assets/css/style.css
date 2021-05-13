@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    white-space:nowrap;
+    padding-left: 20px;
+    color: rgb(172, 181, 187);
+    background-color: rgb(31, 95, 169);
+}
+
+header h1 {
+    margin-right: 20px;
+}
+
+header button {
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: rgb(172, 181, 187);
+    font-size: 15px;
+}
+
+header button:hover {
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+header button:focus {
+    border: none;
+    outline: none;
+}
+
+header button:active {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+nav {
+    display: flex;
+    padding: 10px 20px;
+    justify-content: space-evenly;
+}
+
+nav .navButton, nav .navIndicator, footer .saveButton, footer .clearButton{
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding: 10px 5px;
+    font-size: 15px;
+    background-color: rgb(31, 95, 169);
+    color: white;
+    text-align: center;
+}
+
+nav .navButton:hover, footer {
+    background-color: rgb(28, 87, 153);
+}
+
+nav .navButton:active, footer {
+    background-color: rgb(23, 69, 121);
+}
+
+article {
+    padding: 10px 30px;
+}
+
+article .question{
+    padding: 5px 0;
+    font-size: 15px;
+}
+
+article .answers{
+    padding: 5px 0;
+}
+
+article .answers span{
+    color: rgb(0, 207, 0);
+}
+
+article .explanation{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px;
+}
+
+footer{
+    padding: 10px;
+    background-color: rgb(31, 95, 169);
+    display: flex;
+}
+
+.checkbox{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkboxLabel{
+    display: block;
+    position: relative;
+    padding-left: 45px;
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+}
+
+.checkboxDeco{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 40px;
+    width: 40px;
+    background-color: #0D304C;
+    background-image: url(../images/play.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.checkboxLabel:hover .checkbox ~ .checkboxDeco{
+    background-color: #134066;
+}
+
+.checkboxLabel .checkbox:checked ~ .checkboxDeco{
+    background-image: url(../images/stop.png);
+}
+
+footer .clearButton{
+    background-color: #0D304C;
+    height: 40px;
+    width: 40px;
+    margin-right: 5px;
+    background-image: url(../images/clear.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+footer .saveButton{
+    background-color: #0D304C;
+    flex-grow: 2;
+    width: auto;
+}
+
+footer .saveButton:hover, footer .clearButton:hover {
+    background-color: #14466e;
+}
+
+footer .saveButton:active, footer .clearButton:active {
+    background-color: #091e30;
+}
