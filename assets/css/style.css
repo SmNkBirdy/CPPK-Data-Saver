@@ -74,6 +74,11 @@ nav .navButton:active, footer {
 article {
     padding: 10px 30px;
 }
+article .questionsId{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 15px;
+}
 
 article .question{
     padding: 5px 0;

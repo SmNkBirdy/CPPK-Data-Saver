@@ -19,6 +19,8 @@
     "permissions": [
         "tabs",
         "storage",
+        "scripting",
+        "downloads",
         "file:///C:/*",
         "<all_urls>"
     ]

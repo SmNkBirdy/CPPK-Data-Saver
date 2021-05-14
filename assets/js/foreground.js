@@ -10,6 +10,8 @@ giveAnswer();
 //Now we create empty array cacheQuest to store our current question
 cacheQuest = [];
 //fill array
+// if check equals true that mean we already give an answer and we can execute our script
+// but if check equals false we need to wait until site script will be fully executed
 check = false;
 checkAnswers = document.getElementsByClassName(" answer");
 for (const item of checkAnswers) {
@@ -19,6 +21,7 @@ for (const item of checkAnswers) {
 }
 
 if(check){
+    readId();
     readQuestion();
     readAnswers();
     readExplanation();
@@ -31,7 +34,9 @@ if(check){
         NextQuestion();
     });
 } else {
+    //we simply add trigger on class name of first question, if it changed that mean script fully executed 
     addClassNameListener(" answer", function(){ 
+        readId();
         readQuestion();
         readAnswers();
         readExplanation();
@@ -53,6 +58,20 @@ if(check){
 /* <<< functions zone >>> */
 /* !!! Next 3 functions work with cacheQuest variable !!! */
 //Find question
+function readId(){
+    id = document.getElementsByTagName("h3")[0].innerText;
+    idParts = id.split('.');
+    id = idParts[0];
+    id += "."
+    for (let i = 1; i < idParts.length; i++) {
+        if(!!isNaN(parseFloat(idParts[i]))){
+            break;
+        }        
+        id += idParts[i] + ".";
+    }
+    (id != null) ? (cacheQuest.push(id)) : (console.log("ERROR: ID Does not exist"));
+}
+
 function readQuestion() {
     quest = document.getElementsByClassName("block1 margin-bottom")[0].getElementsByTagName("b")[0];
     (quest != null) ? (cacheQuest.push(quest.innerText)) : (console.log("ERROR: Have no questions"));

@@ -74,8 +74,9 @@ function updatePage(){
 function loadQuest(a){
     document.getElementById('current').innerText = a + 1;
     if(allQuests.length > a){
-        document.getElementById('question').innerText = allQuests[a][0];
-        i = 1;
+        document.getElementById('questionsId').innerText = allQuests[a][0];
+        document.getElementById('question').innerText = allQuests[a][1];
+        i = 2;
         document.getElementById('answers').innerHTML = "";
         while (allQuests[a][i].startsWith("+") || allQuests[a][i].startsWith("-")) {
             if (allQuests[a][i].startsWith("+")) {

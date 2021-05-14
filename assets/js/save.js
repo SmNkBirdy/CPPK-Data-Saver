@@ -5,8 +5,8 @@ chrome.storage.local.get("allQuests", value => {
     data = ""
     console.log(value['allQuests']);
     for (const quest of value['allQuests']) {
-        data += "@" + quest[0] + "\n";
-        i = 1;
+        data += "@" + quest[1] + "\n";
+        i = 2;
         while (quest[i].startsWith("+") || quest[i].startsWith("-")) {
             if(quest[i].startsWith("+")){
                 data += "!" + quest[i].substring(1) + "\n";
