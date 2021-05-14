@@ -5,7 +5,10 @@
 /* << program zone >> */
 // create an empty array to store all the quests
 var allQuests = [];
-chrome.storage.local.set({"allQuests": allQuests});
+//chrome.storage.local.set({"allQuests": allQuests});
+chrome.storage.local.get("allQuests", value => {
+    allQuests = value['allQuests'];
+});
 // create bool to indicate current state
 let extensionState = false;
 chrome.storage.local.set({"extensionState": false});
@@ -16,7 +19,8 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         if(changeInfo.status == "complete"){
             console.log("loaded page url: " + current_tab_info.url);
             console.log("current state: ", (extensionState)? "enabled" : "disabled")
-            if("file:///C:/Users/QuirkyBirdy/Desktop/newExtention/test.html" == current_tab_info.url && extensionState){
+            if(current_tab_info.url.startsWith("https://edu.eva-sdo.ru/learning/training/") && extensionState){
+				console.log(1)
                 chrome.tabs.executeScript(tabId, {file: "./assets/js/foreground.js"}, () => console.log('foreground injected'));
             }
         }

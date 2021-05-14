@@ -20,11 +20,11 @@ document.getElementById("last").addEventListener('click', () => {
 });
 
 document.getElementById("previous").addEventListener('click', () => {
-    loadQuest((currentQuest - 1 >= 0)? currentQuest - 1: currentQuest);
+    loadQuest((currentQuest - 1 >= 0)? (currentQuest - 1): (currentQuest));
 });
 
 document.getElementById("next").addEventListener('click', () => {
-    loadQuest((currentQuest + 1 < allQuests.length)? currentQuest + 1: currentQuest);
+    loadQuest((currentQuest + 1 < allQuests.length)? (currentQuest + 1): (currentQuest));
 });
 
 document.getElementById("close").addEventListener('click', () => {

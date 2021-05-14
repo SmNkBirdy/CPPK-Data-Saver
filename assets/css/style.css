@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+html{
+    height: 0;
+}
+
 header {
     display: flex;
     white-space:nowrap;
